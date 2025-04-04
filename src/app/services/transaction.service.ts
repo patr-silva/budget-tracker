@@ -9,7 +9,9 @@ export class TransactionService {
   private transactions: Transaction[] = [];
   private storageKey: string = 'transactions';
 
-  constructor() {}
+  constructor() {
+    this.loadTransactions();
+  }
 
   private loadTransactions(): void {
     const storedTransactions = localStorage.getItem(this.storageKey);
@@ -20,6 +22,10 @@ export class TransactionService {
 
   private saveTransactions(): void {
     localStorage.setItem(this.storageKey, JSON.stringify(this.transactions));
+  }
+
+  getAllTransactions(): Transaction[] {
+    return this.transactions;
   }
 
   addTransaction(transaction: any) {

@@ -1,1 +1,9 @@
 <p>transaction-list works!</p>
+
+<ul>
+  @for (item of transactions; track item.id) {
+  <li>{{ item.description }}</li>
+  } @empty {
+  <li>There are no items.</li>
+  }
+</ul>

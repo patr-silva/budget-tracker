@@ -1,1 +1,18 @@
-<p>transaction-form works!</p>
+<h1>This is the form</h1>
+
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    
+  <label for="type">Type:</label>
+  <select id="type" formControlName="type">
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
+
+  <label for="description">Description</label>
+  <input type="text" formControlName="description" />
+
+  <label for="amount">Amount</label>
+  <input type="number" formControlName="amount" />
+
+  <button type="submit">Submit</button>
+</form>

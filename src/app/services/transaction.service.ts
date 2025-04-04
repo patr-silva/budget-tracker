@@ -22,11 +22,11 @@ export class TransactionService {
     localStorage.setItem(this.storageKey, JSON.stringify(this.transactions));
   }
 
-  addTransaction(transaction: Transaction) {
+  addTransaction(transaction: any) {
     const newTransaction: Transaction = {
       ...transaction,
       id: uuid(),
-      date: new Date(transaction.date),
+      date: new Date(),
     };
 
     this.transactions.push(newTransaction);
